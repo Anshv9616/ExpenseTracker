@@ -14,7 +14,7 @@ const dashboard =require("./routes/dashboardRoutes")
 // This allows your backend to accept requests from your frontend (different origin/port)
 app.use(
   cors({
-    origin:"https://expense-tracker-htol.vercel.app/", // Allow specific frontend URL or any origin ("*")
+    origin:"https://expense-tracker-htol.vercel.app", // Allow specific frontend URL or any origin ("*")
     methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
     allowedHeaders: ["Content-Type", "Authorization"], // Allowed request headers
   })
