@@ -25,7 +25,7 @@ const ExpenseTractions = ({ transactions,onSeeMore}) => {
   {transactions?.slice(0, 5)?.map((expense) => (
     <motion.div
       key={expense._id}
-      whileHover={{ scale: 1.03, y: -2 }} // 👈 pop + lift
+      whileHover={{ scale: 1.03, y: -2 }} 
       transition={{ type: "spring", stiffness: 300, damping: 10 }}
       className="rounded-lg"
     >

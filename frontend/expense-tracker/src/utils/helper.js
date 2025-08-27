@@ -2,13 +2,12 @@ import moment from "moment";
 
  //Simple email validation function
  const validateEmail = (email) => {
-  // Email should be a string
+  
 
-
-  // Basic regex for email format
+  
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  // Test and return true if valid, false otherwise
+ 
   return regex.test(email);
 };
 
@@ -55,7 +54,7 @@ export const prepareIncomeBarChartData=(data =[])=>{
             amount:item?.amount,
             source:item?.source,
         }));
-       // console.log(chartData)
+     
         return chartData;
 
         

@@ -5,7 +5,7 @@ import {
   LuTrendingDown,
   LuTrash2,
 } from 'react-icons/lu';
-import { motion } from "framer-motion";   // 👈 import motion
+import { motion } from "framer-motion";  
 
 const TransactionInfoCard = ({
   title,
@@ -63,16 +63,16 @@ const TransactionInfoCard = ({
         )}
       </div>
 
-      {/* Delete button with shake on hover */}
+    
       {!hideDeleteBtn && (
     <motion.button
   whileHover={{
-    rotate: [0, -10, 10, -10, 0], // shake
-    scale: 1.3,                   // 👈 pop out effect
+    rotate: [0, -10, 10, -10, 0], 
+    scale: 1.3,                 
   }}
   transition={{
     rotate: { duration: 0.4 },
-    scale: { duration: 0.2, ease: "easeOut" }, // smooth zoom
+    scale: { duration: 0.2, ease: "easeOut" }, 
   }}
   className="sm:ml-3 text-red-500 hover:text-red-700 mt-2 sm:mt-0 self-end sm:self-auto"
   onClick={onDelete}

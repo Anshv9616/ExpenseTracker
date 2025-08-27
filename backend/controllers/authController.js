@@ -9,13 +9,13 @@ const generateToken=(id)=>{
 exports.registerUser=async(req,res)=>{
         const{fullName,email,password ,profileImageUrl}=req.body;
 
-        //validation
+       
         if(!fullName ||!email ||!password){
                return res.status(400).json({message:"all field are required"})
         }
 
         try{
-              //check if email exist
+             
 
               const exisitingUser=await User.findOne({email});
 
@@ -24,7 +24,7 @@ exports.registerUser=async(req,res)=>{
                    message:"user already exists"
               })}
 
-              //create user
+              
               const user=await User.create({
                    fullName,
                    email,
@@ -54,7 +54,7 @@ exports.registerUser=async(req,res)=>{
 exports.loginUser=async(req,res)=>
 {
     
-       //destructure
+       
        const {email,password}=req.body;
        if(!email ||!password){
        return  res.status(400).json({

@@ -12,8 +12,8 @@ const ExpenseList = ({transactions, onDelete,onDownload}) => {
                  <motion.button
   className="card-btn"
   onClick={onDownload}
-  whileHover={{ scale: 1.2 }}     // 👈 pop out
-  whileTap={{ scale: 0.9 }}       // 👈 press effect
+  whileHover={{ scale: 1.2 }}    
+  whileTap={{ scale: 0.9 }}      
   transition={{ type: "spring", stiffness: 300, damping: 10 }}
 >
   <LuDownload className="text-base" />

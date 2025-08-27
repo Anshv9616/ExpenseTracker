@@ -110,33 +110,33 @@ exports.deleteIncome = async (req, res) => {
 
 exports.downloadIncomeExcel = async (req, res) => {
   
-  // 1. Extract authenticated user ID
+  
   const userId = req.user.id;
-  console.log("1: start downloadIncomeExcel");
+ 
 
   try {
-    // 2. Fetch and sort via Mongoose, not via Array.sort
+   
     const income = await Income.find({ userId }).sort({ date: -1 });
-    console.log("2: fetched income entries");
+ 
 
-    // 3. Transform to plain objects for Excel
+   
    const data = income.map(item => ({
   Source: item.source,
   Amount: item.amount,
   Date: item.date ? new Date(item.date).toLocaleDateString("en-GB") : "", 
 }));
 
-    console.log("3: mapped data for sheet");
+  
 
-    // 4. Build workbook and worksheet
+   
     const wb = xlsx.utils.book_new();
     const ws = xlsx.utils.json_to_sheet(data);
     xlsx.utils.book_append_sheet(wb, ws, "Income");
 
-    // 5. Create an in-memory buffer rather than writing a file
+    
     const buffer = xlsx.write(wb, { type: "buffer", bookType: "xlsx" });
 
-    // 6. Set headers so browser prompts download
+    
     res.setHeader(
       "Content-Disposition",
       "attachment; filename=income_details.xlsx"
@@ -146,14 +146,13 @@ exports.downloadIncomeExcel = async (req, res) => {
       "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     );
 
-    // 7. Send buffer directly
     return res.send(buffer);
 
   } catch (err) {
-    // 8. Log the actual error for debugging…
+    
     console.error("Error in downloadIncomeExcel:", err);
 
-    // …and send a 500 response
+    
     return res.status(500).json({ message: "Server error" });
   }
 };

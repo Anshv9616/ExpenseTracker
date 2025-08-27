@@ -39,7 +39,7 @@ const SignUp = () => {
 
       setError("");
 
-      //signup api call
+      
 
       try{
 

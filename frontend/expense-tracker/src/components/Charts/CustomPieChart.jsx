@@ -9,7 +9,7 @@ import {
   Label,
 } from "recharts";
 
-// ✅ Custom tooltip component
+
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
@@ -20,7 +20,7 @@ const CustomTooltip = ({ active, payload }) => {
           borderRadius: "5px",
           padding: "6px 10px",
           boxShadow: "0px 2px 8px rgba(0,0,0,0.15)",
-          pointerEvents: "none", // prevent flicker
+          pointerEvents: "none", 
         }}
       >
         <p style={{ margin: 0 }}>{payload[0].name}</p>
@@ -66,7 +66,7 @@ const CustomPieChart = ({
           <Label
             value={label ?? "Total"} 
             position="center"
-            dy={-12} // shift upward
+            dy={-12}
             style={{
               fontSize: "18px",
               fill: "#333",
@@ -76,7 +76,7 @@ const CustomPieChart = ({
           <Label
             value={total}
             position="center"
-            dy={12} // shift downward
+            dy={12}
             style={{
               fontSize: "16px",
               fontWeight: "semibold",
@@ -85,7 +85,7 @@ const CustomPieChart = ({
           />
         </Pie>
 
-        {/* ✅ Use the custom tooltip */}
+   
         <Tooltip
           content={<CustomTooltip />}
           wrapperStyle={{ outline: "none" }}

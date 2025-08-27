@@ -11,13 +11,7 @@ const RecentTransactions = ({ transactions=[], onSeeMore }) => {
     <div className='card'>
       <div className='flex items-center justify-between'>
         <h5 className='text-lg font-medium'>Recent Transactions</h5>
-        {/* <button
-          className='card-btn'
-          onClick={onSeeMore}
-          aria-label='View all transactions'
-        >
-          See All <LuArrowRight className='text-base' />
-        </button> */}
+       
         <motion.button
   whileHover={{ scale: 1.1 }}
   transition={{ duration: 0.2, ease: "easeOut" }}

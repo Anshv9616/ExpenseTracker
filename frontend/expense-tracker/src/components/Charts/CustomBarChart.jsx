@@ -10,11 +10,10 @@ import {
 } from "recharts";
 
 const CustomBarChart = ({ data }) => {
-  // Assuming data is an array of objects like [{ month: "2025-08", amount: 100, source: "Source A" }, ...]
-  // Process data to pivot by source for stacking
 
-  const sources = [...new Set(data.map((d) => d.source || d.category))]; // Handle source or category
-  const months = [...new Set(data.map((d) => d.month))]; // Assuming months are in desired order
+
+  const sources = [...new Set(data.map((d) => d.source || d.category))]; 
+  const months = [...new Set(data.map((d) => d.month))]; 
 
   const pivotedData = months.map((month) => {
     const monthData = data.filter((d) => d.month === month);

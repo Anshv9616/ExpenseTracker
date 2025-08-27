@@ -4,7 +4,7 @@ import { SIDE_MENU_DATA } from "../../../utils/data";
 import { UserContext } from '../../../context/UserContext';
 import { useNavigate } from 'react-router-dom';
 import CharAvatar from "../../Cards/CharAvatar";
-import { motion } from "framer-motion";   // 👈 add this
+import { motion } from "framer-motion"; 
 
 const SideMenu = ({ activeMenu }) => {
   const { user, clearUser } = useContext(UserContext);
@@ -58,8 +58,8 @@ const SideMenu = ({ activeMenu }) => {
           
           {activeMenu === item.label ? (
   <motion.span
-    animate={{ y: [0, -10, 0] }}   // 👈 goes up (-10px) then back
-    transition={{ duration: 1, ease: "easeInOut" }} // 👈 smooth & slow
+    animate={{ y: [0, -10, 0] }}  
+    transition={{ duration: 1, ease: "easeInOut" }} 
   >
     {item.label}
   </motion.span>
